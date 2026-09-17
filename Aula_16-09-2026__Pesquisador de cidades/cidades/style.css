@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dcdcdc;
+}
+
+.caixa {
+    width: 400px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+button {
+    width: 95%;
+    padding: 10px;
+    background: steelblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+table {
+    width: 80px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: steelblue;
+    color: white;
+}
