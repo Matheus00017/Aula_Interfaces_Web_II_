@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Senha</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: purple;
+            margin: 0;
+        }
+
+        .card{
+            max-width: 520px;
+            margin: 32px auto;
+            background: rgb(140, 223, 233);   
+            padding: 18px;
+            border-radius: 12px;         
+        }
+
+        input{
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .ok{
+            color: #0a7a2f;
+        }
+        .no{
+            color: #b00020;
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <h2>Validador de Senha</h2>
+        <input type="password" id="pw" placeholder="Digite a sua Senha" oninput="v()" />
+        <div id="r"></div>
+    </main>
+    <script>
+        const v=() =>{
+            const s=pw.value, t=[
+                [s.length>=8,"min. 8 caracteres"],
+                [/[A-Z]/.test(s),"1 letra maiúscula"],
+                [/[a-z]/.test(s),"1 letra minúscula"],
+                [/[0-9]/.test(s),"1 número"],
+            ];
+            r.innerHTML=t.map(x=>`<div class="${x[0]?'ok':'no'}">${x[0] ? '✔' : '❌' }${x[1]}</div>`).join("")
+             + `<hr><b>${t.every(x=>x[0])?'Senha forte ✔': 'Senha Fraca ❌'}</b>`;
+        }
+    </script>
+</body>
+</html>
